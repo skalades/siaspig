@@ -1,6 +1,7 @@
 'use client';
 import { useEffect } from 'react';
-import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 // Data dummy alumni untuk preview
@@ -23,21 +24,48 @@ const dummyAlumni = [
 ];
 
 function getRadius(count: number) {
-  if (count > 200) return 20;
-  if (count > 100) return 15;
-  if (count > 50) return 11;
-  return 8;
+  if (count > 200) return 40;
+  if (count > 100) return 30;
+  if (count > 50) return 22;
+  return 16;
+}
+
+const createPulseIcon = (color: string, size: number) => {
+  return L.divIcon({
+    className: 'custom-pulse-icon',
+    html: `
+      <div class="pulse-icon-wrapper" style="width: ${size}px; height: ${size}px;">
+        <div class="pulse-icon-core" style="background-color: ${color};"></div>
+        <div class="pulse-icon-ring" style="border-color: ${color};"></div>
+      </div>
+    `,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  });
+};
+
+function MapEffect() {
+  const map = useMap();
+  useEffect(() => {
+    // Animasi entrance map (terbang ke lokasi yang difokuskan saat di-load)
+    setTimeout(() => {
+      map.flyTo([-2.5, 118], 5, { duration: 2.5, easeLinearity: 0.25 });
+    }, 400);
+  }, [map]);
+  return null;
 }
 
 export default function AlumniMapInner() {
   return (
     <MapContainer
-      center={[-2.5, 118]}
-      zoom={5}
+      center={[-8, 110]} // Initial center point for animation
+      zoom={4}           // Initial zoom
       style={{ height: '480px', width: '100%' }}
       scrollWheelZoom={false}
       attributionControl={false}
     >
+      <MapEffect />
+      
       {/* Dark tile layer (CartoDB Dark Matter) */}
       <TileLayer
         url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
@@ -46,16 +74,10 @@ export default function AlumniMapInner() {
 
       {/* Alumni markers */}
       {dummyAlumni.map((alumni, i) => (
-        <CircleMarker
+        <Marker
           key={i}
-          center={[alumni.lat, alumni.lng]}
-          radius={getRadius(alumni.count)}
-          pathOptions={{
-            fillColor: '#3b82f6',
-            fillOpacity: 0.75,
-            color: '#60a5fa',
-            weight: 1.5,
-          }}
+          position={[alumni.lat, alumni.lng]}
+          icon={createPulseIcon('#3b82f6', getRadius(alumni.count))}
         >
           <Popup>
             <div style={{ padding: '4px' }}>
@@ -70,7 +92,7 @@ export default function AlumniMapInner() {
               </div>
             </div>
           </Popup>
-        </CircleMarker>
+        </Marker>
       ))}
     </MapContainer>
   );

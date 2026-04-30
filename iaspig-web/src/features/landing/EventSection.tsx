@@ -1,5 +1,5 @@
 'use client';
-import { Calendar, MapPin, Users, ArrowRight, Clock } from 'lucide-react';
+import { TbCalendarEvent, TbMapPin, TbUsers, TbArrowRight, TbClock } from 'react-icons/tb';
 import Link from 'next/link';
 
 const events = [
@@ -69,9 +69,9 @@ function EventCard({ event }: { event: typeof events[0] }) {
       <div style={{ padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: '12px', flex: 1, background: 'rgba(255,255,255,0.01)' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '8px' }}>
         {[
-          { icon: <Calendar size={13} />, text: event.date },
-          { icon: <Clock size={13} />, text: event.time },
-          { icon: <MapPin size={13} />, text: event.location },
+          { icon: <TbCalendarEvent size={13} />, text: event.date },
+          { icon: <TbClock size={13} />, text: event.time },
+          { icon: <TbMapPin size={13} />, text: event.location },
         ].map((item, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', fontSize: '0.82rem' }}>
             <span style={{ color: '#3b82f6', flexShrink: 0 }}>{item.icon}</span>
@@ -84,7 +84,7 @@ function EventCard({ event }: { event: typeof events[0] }) {
       <div>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px', fontSize: '0.78rem', color: '#64748b' }}>
           <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Users size={12} /> {event.registered} / {event.quota} peserta
+            <TbUsers size={12} /> {event.registered} / {event.quota} peserta
           </span>
           <span style={{ color: isAlmostFull ? '#f87171' : '#34d399' }}>{pct}%</span>
         </div>
@@ -94,7 +94,7 @@ function EventCard({ event }: { event: typeof events[0] }) {
       </div>
 
       <Link href={`/kegiatan/${event.id}`} className="btn-secondary" style={{ textAlign: 'center', justifyContent: 'center', fontSize: '0.85rem', padding: '10px', marginTop: 'auto', borderRadius: '8px' }}>
-        Lihat Detail <ArrowRight size={14} />
+        Lihat Detail <TbArrowRight size={14} />
       </Link>
       </div>
     </div>
@@ -114,7 +114,7 @@ export default function EventSection() {
             <p className="section-subtitle">Jangan lewatkan kegiatan alumni terbaru.</p>
           </div>
           <Link href="/kegiatan" className="btn-secondary">
-            Lihat Semua <ArrowRight size={16} />
+            Lihat Semua <TbArrowRight size={16} />
           </Link>
         </div>
 

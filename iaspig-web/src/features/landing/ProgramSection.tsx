@@ -1,9 +1,9 @@
 'use client';
-import { Map, Briefcase, Calendar, BookOpen, Users, Sparkles } from 'lucide-react';
+import { TbMap, TbBriefcase, TbCalendarEvent, TbBook, TbUsers, TbSparkles } from 'react-icons/tb';
 
 const programs = [
   {
-    icon: <Map size={28} />,
+    icon: <TbMap size={28} />,
     color: '#3b82f6',
     title: 'Peta Sebaran Alumni',
     desc: 'Visualisasi interaktif lokasi alumni di seluruh Indonesia menggunakan teknologi GIS — identitas khas kami sebagai alumni SPIG.',
@@ -11,7 +11,7 @@ const programs = [
     tagClass: 'badge-blue',
   },
   {
-    icon: <Briefcase size={28} />,
+    icon: <TbBriefcase size={28} />,
     color: '#10b981',
     title: 'Bursa Kerja Alumni',
     desc: 'Lowongan pekerjaan dari instansi terpercaya yang dikhususkan untuk alumni SPIG UPI di bidang GIS, survei, dan pemetaan.',
@@ -19,7 +19,7 @@ const programs = [
     tagClass: 'badge-emerald',
   },
   {
-    icon: <Calendar size={28} />,
+    icon: <TbCalendarEvent size={28} />,
     color: '#f59e0b',
     title: 'Kegiatan & Event',
     desc: 'Webinar, reuni, workshop GIS, dan talkshow industri. Tetap terhubung dan terus berkembang bersama komunitas alumni.',
@@ -27,7 +27,7 @@ const programs = [
     tagClass: 'badge-teal',
   },
   {
-    icon: <Users size={28} />,
+    icon: <TbUsers size={28} />,
     color: '#8b5cf6',
     title: 'Program Mentoring',
     desc: 'Terhubung dengan alumni senior sebagai mentor karir, teknis GIS, atau pengembangan profesional. Gratis untuk anggota.',
@@ -35,7 +35,7 @@ const programs = [
     tagClass: 'badge-blue',
   },
   {
-    icon: <BookOpen size={28} />,
+    icon: <TbBook size={28} />,
     color: '#ec4899',
     title: 'Repositori Karya Ilmiah',
     desc: 'Akses koleksi skripsi, penelitian, dan tugas akhir alumni. Referensi bagi mahasiswa aktif dan alumni yang ingin riset lanjutan.',
@@ -43,7 +43,7 @@ const programs = [
     tagClass: 'badge-teal',
   },
   {
-    icon: <Sparkles size={28} />,
+    icon: <TbSparkles size={28} />,
     color: '#14b8a6',
     title: 'Forum Diskusi',
     desc: 'Ruang diskusi aktif per angkatan, bidang karir, dan topik teknis GIS. Berbagi pengetahuan dan membangun jaringan.',

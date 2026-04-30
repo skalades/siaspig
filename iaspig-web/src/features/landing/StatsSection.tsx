@@ -1,14 +1,14 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { Users, MapPin, Briefcase, Award, Globe, GraduationCap } from 'lucide-react';
+import { TbUsers, TbMapPin, TbBriefcase, TbAward, TbWorld, TbSchool } from 'react-icons/tb';
 
 const stats = [
-  { icon: <Users size={24} />, value: 1200, suffix: '+', label: 'Alumni Terdaftar', color: '#3b82f6', desc: 'Dari seluruh angkatan' },
-  { icon: <MapPin size={24} />, value: 34, suffix: '', label: 'Provinsi', color: '#14b8a6', desc: 'Sebaran di Indonesia' },
-  { icon: <Briefcase size={24} />, value: 98, suffix: '%', label: 'Terserap Industri', color: '#10b981', desc: 'Dalam 1 tahun lulus' },
-  { icon: <GraduationCap size={24} />, value: 15, suffix: '+', label: 'Angkatan', color: '#f59e0b', desc: 'Sejak berdiri' },
-  { icon: <Globe size={24} />, value: 5, suffix: '+', label: 'Negara', color: '#8b5cf6', desc: 'Alumni bekerja di luar negeri' },
-  { icon: <Award size={24} />, value: 200, suffix: '+', label: 'Instansi Mitra', color: '#ec4899', desc: 'Pemerintah & swasta' },
+  { icon: <TbUsers size={24} />, value: 1200, suffix: '+', label: 'Alumni Terdaftar', color: '#3b82f6', desc: 'Dari seluruh angkatan' },
+  { icon: <TbMapPin size={24} />, value: 34, suffix: '', label: 'Provinsi', color: '#14b8a6', desc: 'Sebaran di Indonesia' },
+  { icon: <TbBriefcase size={24} />, value: 98, suffix: '%', label: 'Terserap Industri', color: '#10b981', desc: 'Dalam 1 tahun lulus' },
+  { icon: <TbSchool size={24} />, value: 15, suffix: '+', label: 'Angkatan', color: '#f59e0b', desc: 'Sejak berdiri' },
+  { icon: <TbWorld size={24} />, value: 5, suffix: '+', label: 'Negara', color: '#8b5cf6', desc: 'Alumni bekerja di luar negeri' },
+  { icon: <TbAward size={24} />, value: 200, suffix: '+', label: 'Instansi Mitra', color: '#ec4899', desc: 'Pemerintah & swasta' },
 ];
 
 function useCountUp(target: number, duration = 2000, started: boolean) {

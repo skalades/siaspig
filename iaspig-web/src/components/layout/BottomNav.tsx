@@ -1,27 +1,27 @@
 import Link from 'next/link';
-import { Home, Map as MapIcon, Briefcase, Calendar, User } from 'lucide-react';
+import { TbHome, TbMap, TbBriefcase, TbCalendarEvent, TbUser } from 'react-icons/tb';
 
 export default function BottomNav() {
   return (
     <div className="bottom-nav">
       <Link href="#hero" className="nav-item">
-        <Home size={20} />
+        <TbHome size={20} />
         <span>Beranda</span>
       </Link>
       <Link href="#peta" className="nav-item">
-        <MapIcon size={20} />
+        <TbMap size={20} />
         <span>Peta</span>
       </Link>
       <Link href="#lowongan" className="nav-item">
-        <Briefcase size={20} />
+        <TbBriefcase size={20} />
         <span>Karir</span>
       </Link>
       <Link href="#kegiatan" className="nav-item">
-        <Calendar size={20} />
+        <TbCalendarEvent size={20} />
         <span>Event</span>
       </Link>
       <Link href="/login" className="nav-item">
-        <User size={20} />
+        <TbUser size={20} />
         <span>Profil</span>
       </Link>
 

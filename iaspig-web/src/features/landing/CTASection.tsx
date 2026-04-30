@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { ArrowRight, UserPlus, Mail } from 'lucide-react';
+import { TbArrowRight, TbUserPlus, TbMail } from 'react-icons/tb';
 
 const partners = [
   { name: 'BIG', logo: '🏛️', full: 'Badan Informasi Geospasial' },
@@ -61,7 +61,7 @@ export default function CTASection() {
               }}
             />
             <button className="btn-primary" style={{ whiteSpace: 'nowrap', padding: '14px 22px' }}>
-              <Mail size={16} /> Subscribe
+              <TbMail size={16} /> Subscribe
             </button>
           </div>
           <p style={{ fontSize: '0.76rem', color: '#334155', marginTop: '12px' }}>
@@ -86,7 +86,7 @@ export default function CTASection() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/daftar" className="btn-primary" style={{ fontSize: '1.05rem', padding: '16px 36px' }}>
-              <UserPlus size={20} /> Daftar Sebagai Alumni <ArrowRight size={18} />
+              <TbUserPlus size={20} /> Daftar Sebagai Alumni <TbArrowRight size={18} />
             </Link>
             <Link href="/tentang" className="btn-secondary" style={{ fontSize: '1.05rem', padding: '16px 36px' }}>
               Pelajari Lebih Lanjut

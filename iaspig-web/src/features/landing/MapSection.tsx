@@ -1,12 +1,12 @@
 'use client';
 import dynamic from 'next/dynamic';
-import { MapPin, Filter, Users } from 'lucide-react';
+import { TbMapPin, TbFilter, TbUsers } from 'react-icons/tb';
 
 // Leaflet harus dynamic import (no SSR) karena butuh window object
 const AlumniMapInner = dynamic(() => import('./AlumniMapInner'), { ssr: false, loading: () => (
   <div style={{ height: '480px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.03)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.08)' }}>
     <div style={{ textAlign: 'center', color: '#475569' }}>
-      <MapPin size={32} style={{ margin: '0 auto 12px', display: 'block' }} />
+      <TbMapPin size={32} style={{ margin: '0 auto 12px', display: 'block' }} />
       <p>Memuat peta...</p>
     </div>
   </div>
@@ -36,7 +36,7 @@ export default function MapSection() {
             {/* Filter chips */}
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', fontSize: '0.82rem', marginBottom: '12px' }}>
-                <Filter size={14} /> Filter Lokasi
+                <TbFilter size={14} /> Filter Lokasi
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {filters.map((f, i) => (
@@ -74,7 +74,7 @@ export default function MapSection() {
               {/* Map header */}
               <div style={{ padding: '16px 20px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#94a3b8', fontSize: '0.85rem' }}>
-                  <Users size={15} />
+                  <TbUsers size={15} />
                   <span>Menampilkan <strong style={{ color: '#f0f6ff' }}>1.200+</strong> alumni</span>
                 </div>
                 <div style={{ display: 'flex', gap: '6px' }}>

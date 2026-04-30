@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { MapPin as MapPinIcon, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { TbMapPin, TbMail, TbPhone } from 'react-icons/tb';
 
 
 
@@ -45,12 +45,12 @@ export default function Footer() {
             {/* Kontak */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
-                { icon: <Mail size={14} />, text: 'iaspig@upi.ac.id' },
-                { icon: <Phone size={14} />, text: '+62 xxx xxxx xxxx' },
-                { icon: <MapPin size={14} />, text: 'Bandung, Jawa Barat' },
+                { icon: <TbMail size={16} />, text: 'iaspig@upi.ac.id' },
+                { icon: <TbPhone size={16} />, text: '+62 xxx xxxx xxxx' },
+                { icon: <TbMapPin size={16} />, text: 'Bandung, Jawa Barat' },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', fontSize: '0.85rem' }}>
-                  <span style={{ color: '#3b82f6' }}>{item.icon}</span>
+                  <span style={{ color: '#3b82f6', display: 'flex', alignItems: 'center' }}>{item.icon}</span>
                   {item.text}
                 </div>
               ))}

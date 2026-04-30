@@ -1,5 +1,5 @@
 'use client';
-import { Briefcase, MapPin, Clock, ArrowRight, Building2, Bookmark } from 'lucide-react';
+import { TbBriefcase, TbMapPin, TbClock, TbArrowRight, TbBuilding, TbBookmark } from 'react-icons/tb';
 import Link from 'next/link';
 
 const jobs = [
@@ -74,14 +74,14 @@ function JobCard({ job }: { job: typeof jobs[0] }) {
           onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#3b82f6'; }}
           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#475569'; }}
         >
-          <Bookmark size={18} />
+          <TbBookmark size={18} />
         </button>
       </div>
 
       <div style={{ display: 'flex', gap: '16px', marginBottom: '14px', flexWrap: 'wrap' }}>
         {[
-          { icon: <MapPin size={12} />, text: job.location },
-          { icon: <Clock size={12} />, text: job.posted },
+          { icon: <TbMapPin size={12} />, text: job.location },
+          { icon: <TbClock size={12} />, text: job.posted },
         ].map((item, i) => (
           <span key={i} style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.78rem', color: '#64748b' }}>
             <span style={{ color: '#3b82f6' }}>{item.icon}</span> {item.text}
@@ -113,7 +113,7 @@ function JobCard({ job }: { job: typeof jobs[0] }) {
           fontSize: '0.82rem', color: '#60a5fa', textDecoration: 'none', fontWeight: 600,
           transition: 'gap 0.2s',
         }}>
-          Lihat Detail <ArrowRight size={14} />
+          Lihat Detail <TbArrowRight size={14} />
         </Link>
       </div>
     </div>
@@ -133,7 +133,7 @@ export default function JobSection() {
             <p className="section-subtitle">Peluang karir di bidang GIS, survei, dan pemetaan untuk alumni SPIG.</p>
           </div>
           <Link href="/lowongan" className="btn-secondary">
-            <Briefcase size={16} /> Semua Lowongan <ArrowRight size={16} />
+            <TbBriefcase size={16} /> Semua Lowongan <TbArrowRight size={16} />
           </Link>
         </div>
 
@@ -153,7 +153,7 @@ export default function JobSection() {
             </div>
           </div>
           <Link href="/lowongan/buat" className="btn-primary" style={{ whiteSpace: 'nowrap' }}>
-            <Building2 size={16} /> Posting Lowongan
+            <TbBuilding size={16} /> Posting Lowongan
           </Link>
         </div>
       </div>

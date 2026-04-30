@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { TbStarFilled, TbChevronLeft, TbChevronRight, TbQuote } from 'react-icons/tb';
 
 const testimonials = [
   {
@@ -60,7 +60,7 @@ export default function TestimonialSection() {
           <div className="glass" style={{ borderRadius: '24px', padding: '56px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
             {/* Quote icon */}
             <div style={{ position: 'absolute', top: '28px', left: '32px', opacity: 0.1 }}>
-              <Quote size={64} color="#3b82f6" />
+              <TbQuote size={64} color="#3b82f6" />
             </div>
 
             {/* Avatar */}
@@ -76,7 +76,7 @@ export default function TestimonialSection() {
             {/* Stars */}
             <div style={{ display: 'flex', justifyContent: 'center', gap: '4px', marginBottom: '24px' }}>
               {Array.from({ length: t.rating }).map((_, i) => (
-                <Star key={i} size={16} fill="#f59e0b" color="#f59e0b" />
+                <TbStarFilled key={i} size={16} color="#f59e0b" />
               ))}
             </div>
 
@@ -98,7 +98,7 @@ export default function TestimonialSection() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               color: '#94a3b8', cursor: 'pointer', transition: 'all 0.2s',
             }}>
-              <ChevronLeft size={18} />
+              <TbChevronLeft size={18} />
             </button>
 
             <div style={{ display: 'flex', gap: '8px' }}>
@@ -121,7 +121,7 @@ export default function TestimonialSection() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               color: '#94a3b8', cursor: 'pointer', transition: 'all 0.2s',
             }}>
-              <ChevronRight size={18} />
+              <TbChevronRight size={18} />
             </button>
           </div>
         </div>

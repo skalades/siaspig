@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, MapPin, Users, Award, ChevronDown } from 'lucide-react';
+import { TbArrowRight, TbMapPin, TbUsers, TbAward, TbChevronDown } from 'react-icons/tb';
 
 export default function HeroSection() {
   return (
@@ -34,7 +34,7 @@ export default function HeroSection() {
         {/* Badge */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '28px' }}>
           <span className="badge badge-blue">
-            <MapPin size={12} /> Program Studi SPIG · Universitas Pendidikan Indonesia
+            <TbMapPin size={12} /> Program Studi SPIG · Universitas Pendidikan Indonesia
           </span>
         </div>
 
@@ -58,19 +58,19 @@ export default function HeroSection() {
         {/* CTA Buttons */}
         <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '64px' }}>
           <Link href="/daftar" className="btn-primary" style={{ fontSize: '1rem', padding: '15px 32px' }}>
-            Bergabung Sekarang <ArrowRight size={18} />
+            Bergabung Sekarang <TbArrowRight size={18} />
           </Link>
           <Link href="#peta" className="btn-secondary" style={{ fontSize: '1rem', padding: '15px 32px' }}>
-            <MapPin size={18} /> Lihat Peta Alumni
+            <TbMapPin size={18} /> Lihat Peta Alumni
           </Link>
         </div>
 
         {/* Mini stats */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap' }}>
           {[
-            { icon: <Users size={18} />, value: '1.200+', label: 'Alumni Terdaftar' },
-            { icon: <MapPin size={18} />, value: '34', label: 'Provinsi' },
-            { icon: <Award size={18} />, value: '15+', label: 'Angkatan' },
+            { icon: <TbUsers size={18} />, value: '1.200+', label: 'Alumni Terdaftar' },
+            { icon: <TbMapPin size={18} />, value: '34', label: 'Provinsi' },
+            { icon: <TbAward size={18} />, value: '15+', label: 'Angkatan' },
           ].map((stat, i) => (
             <div key={i} style={{ textAlign: 'center' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: '#60a5fa', marginBottom: '4px' }}>
@@ -90,7 +90,7 @@ export default function HeroSection() {
         textDecoration: 'none', fontSize: '0.75rem', animation: 'bounce 2s ease-in-out infinite',
       }}>
         <span style={{ letterSpacing: '0.1em' }}>SCROLL</span>
-        <ChevronDown size={16} />
+        <TbChevronDown size={16} />
       </a>
 
       <style>{`

@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Map, Menu, X, ChevronRight } from 'lucide-react';
+import { TbMap, TbMenu2, TbX, TbChevronRight } from 'react-icons/tb';
 
 const navLinks = [
   { label: 'Beranda', href: '#hero' },
@@ -65,8 +65,8 @@ export default function Navbar() {
           }}>
             Masuk
           </Link>
-          <Link href="/daftar" className="btn-primary" style={{ padding: '9px 20px', fontSize: '0.88rem' }}>
-            Daftar <ChevronRight size={15} />
+          <Link href="/daftar" className="btn-primary" style={{ padding: '9px 20px', fontSize: '0.88rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            Daftar <TbChevronRight size={16} />
           </Link>
           {/* Mobile toggle */}
           <button
@@ -74,7 +74,7 @@ export default function Navbar() {
             style={{ background: 'none', border: 'none', color: '#f0f6ff', cursor: 'pointer', display: 'none' }}
             className="mobile-toggle"
           >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            {menuOpen ? <TbX size={24} /> : <TbMenu2 size={24} />}
           </button>
         </div>
       </div>
