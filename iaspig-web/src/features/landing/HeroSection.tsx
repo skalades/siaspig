@@ -12,16 +12,24 @@ export default function HeroSection() {
       paddingTop: '72px',
       background: 'var(--bg-primary)',
     }}>
-      {/* Background */}
-      <div className="dot-grid" style={{ position: 'absolute', inset: 0, opacity: 0.15 }} />
+      {/* Modern Background Image with Gradient Overlay */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        backgroundImage: 'url(/hero-modern-bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.6,
+      }} />
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'linear-gradient(to bottom, rgba(4, 13, 26, 0.3) 0%, rgba(4, 13, 26, 0.98) 100%)',
+      }} />
+      
+      {/* Background Texture */}
+      <div className="dot-grid" style={{ position: 'absolute', inset: 0, opacity: 0.2 }} />
 
       {/* Content */}
       <div className="container" style={{ position: 'relative', zIndex: 3, textAlign: 'center', padding: '60px 24px' }}>
-        
-        {/* Prominent Logo */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '32px' }}>
-          <img src="/logo.png" alt="IASPIG Logo" style={{ width: '140px', height: '140px', objectFit: 'contain' }} />
-        </div>
 
         {/* Badge */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '28px' }}>
