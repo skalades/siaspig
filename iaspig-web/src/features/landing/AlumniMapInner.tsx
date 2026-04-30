@@ -47,10 +47,22 @@ const createPulseIcon = (color: string, size: number) => {
 function MapEffect() {
   const map = useMap();
   useEffect(() => {
-    // Animasi entrance map (terbang ke lokasi yang difokuskan saat di-load)
-    setTimeout(() => {
-      map.flyTo([-2.5, 118], 5, { duration: 2.5, easeLinearity: 0.25 });
-    }, 400);
+    const container = map.getContainer();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          // Animasi entrance map (terbang ke lokasi yang difokuskan saat di-scroll)
+          setTimeout(() => {
+            map.flyTo([-2.5, 118], 5, { duration: 2.5, easeLinearity: 0.25 });
+          }, 300);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(container);
+
+    return () => observer.disconnect();
   }, [map]);
   return null;
 }
